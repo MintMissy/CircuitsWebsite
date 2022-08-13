@@ -1,0 +1,301 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.btn {
+  border: 2px solid rgb(249, 134, 27);
+  padding: 0.5em 1em;
+  background: rgb(249, 134, 27);
+  transition: background-color 0.15s, border-color 0.15s;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(86, 27, 222);
+  border-color: rgb(86, 27, 222);
+}
+
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(86, 27, 222);
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+.logo span {
+  font-weight: 900;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.btn--hamburger {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+}
+@media screen and (min-width: 769px) {
+  .btn--hamburger {
+    display: none;
+  }
+}
+
+.drop-shadow {
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.drop-shadow.hidden {
+  display: none;
+}
+
+.nav-links {
+  min-width: 35vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(55, 29, 117);
+  gap: 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  z-index: 100;
+  margin: 0;
+  transition: transform 0.2s ease-in-out;
+  z-index: 100;
+}
+@media screen and (min-width: 769px) {
+  .nav-links {
+    min-width: unset;
+    position: initial;
+    flex-direction: row;
+    padding-right: 0;
+    padding-top: unset;
+    background-color: unset;
+  }
+}
+
+.nav-links.hidden {
+  transform: translateX(-100%);
+}
+@media screen and (min-width: 769px) {
+  .nav-links.hidden {
+    transform: unset;
+  }
+}
+
+.nav-link a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link a::after {
+  position: absolute;
+  content: "";
+  background-color: white;
+  height: 2px;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  transition: 0.5s width;
+  width: 0;
+  margin: 0 auto;
+}
+
+.nav-link a:hover::after {
+  width: 90%;
+}
+
+.home-hero {
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+.home-hero .background {
+  position: absolute;
+  background-image: url("../assets/bg-1.avif");
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.5s transform;
+  z-index: -1;
+}
+.home-hero .content {
+  text-align: center;
+  height: 100%;
+  padding: 4rem 1rem 3rem;
+}
+@media screen and (min-width: 769px) {
+  .home-hero .content {
+    padding: 7rem 3rem 4rem;
+  }
+}
+.home-hero .content h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.home-hero .content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto 1.5rem;
+  max-width: 75ch;
+}
+
+.home-hero:hover .background {
+  transform: scale(1.1);
+}
+
+.customer-policy {
+  padding-top: 4rem;
+}
+.customer-policy h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.customer-policy p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.advantages {
+  display: flex;
+  padding-bottom: 5rem;
+}
+
+.advantage {
+  margin: 0 auto;
+  text-align: center;
+}
+.advantage-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(86, 27, 222);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  font-size: 3rem;
+  color: white;
+  margin: 0 auto 1rem;
+}
+.advantage h2 {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+/*# sourceMappingURL=style.css.map */

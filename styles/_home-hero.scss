@@ -1,0 +1,47 @@
+.home-hero {
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+
+  .background {
+    position: absolute;
+    background-image: url("../assets/bg-1.avif");
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s transform;
+    z-index: -1;
+  }
+
+  .content {
+    text-align: center;
+    height: 100%;
+    padding: 4rem 1rem 3rem;
+
+    @media screen and (min-width: 769px) {
+      padding: 7rem 3rem 4rem;
+    }
+
+    h1 {
+      color: white;
+      font-weight: 900;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto 1.5rem;
+      max-width: 75ch;
+    }
+  }
+}
+
+.home-hero:hover {
+  .background {
+    transform: scale(1.1);
+  }
+}

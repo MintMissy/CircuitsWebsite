@@ -1,0 +1,73 @@
+@import "_reset.scss";
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.btn {
+  $btn-background: rgb(249, 134, 27);
+  border: 2px solid $btn-background;
+  padding: 0.5em 1em;
+  background: $btn-background;
+  transition: background-color 0.15s, border-color 0.15s;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  $btn-background: rgb(86, 27, 222);
+  background-color: $btn-background;
+  border-color: $btn-background;
+}
+
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@import "_navbar.scss";
+@import "_home-hero.scss";
+
+.customer-policy {
+  padding-top: 4rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+.advantages {
+  display: flex;
+  padding-bottom: 5rem;
+}
+
+.advantage {
+  margin: 0 auto;
+  text-align: center;
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(86, 27, 222);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+    color: white;
+    margin: 0 auto 1rem;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 1.15rem;
+  }
+}
