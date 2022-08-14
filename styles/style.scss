@@ -26,48 +26,31 @@ body {
   margin-right: auto;
 }
 
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.lined-header {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.lined-header::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  width: 5px;
+  border-radius: 3px;
+  top: 4px;
+  bottom: 4px;
+  background-color: rgb(86, 27, 222);
+}
+
 @import "_navbar.scss";
 @import "_home-hero.scss";
-
-.customer-policy {
-  padding-top: 4rem;
-
-  h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-}
-
-.advantages {
-  display: flex;
-  padding-bottom: 5rem;
-}
-
-.advantage {
-  margin: 0 auto;
-  text-align: center;
-
-  &-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(86, 27, 222);
-    border-radius: 100%;
-    width: 80px;
-    height: 80px;
-    font-size: 3rem;
-    color: white;
-    margin: 0 auto 1rem;
-  }
-
-  h2 {
-    font-weight: 500;
-    font-size: 1.15rem;
-  }
-}
+@import "_customer-policy.scss";
+@import "_technologies.scss";
