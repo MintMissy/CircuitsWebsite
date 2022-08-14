@@ -255,6 +255,7 @@ nav {
   right: 0;
   bottom: 0;
   transition: 0.5s transform;
+  background-color: #091346;
   z-index: -1;
 }
 .home-hero .content {
@@ -284,7 +285,7 @@ nav {
 }
 
 .customer-policy {
-  padding: 4rem 1rem 0;
+  padding: 3rem 1rem 0;
 }
 .customer-policy h1 {
   text-align: center;
@@ -333,10 +334,22 @@ nav {
 }
 
 .technologies {
+  margin-top: 2rem;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+}
+.technologies h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.technologies-container {
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 769px) {
+  .technologies-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .technology {
@@ -346,18 +359,7 @@ nav {
   border-radius: 8px;
   overflow: hidden;
 }
-@media screen and (min-width: 769px) {
-  .technology {
-    align-items: stretch;
-    flex-direction: row;
-  }
-}
 
-@media screen and (min-width: 769px) {
-  .technology:nth-child(2n) {
-    flex-direction: row-reverse;
-  }
-}
 .technology:hover .technology-image img {
   transform: scale(1.05);
 }
@@ -366,13 +368,6 @@ nav {
   position: relative;
   overflow: hidden;
   height: 225px;
-}
-@media screen and (min-width: 769px) {
-  .technology-image {
-    flex: 1;
-    max-height: unset;
-    height: unset;
-  }
 }
 .technology-image img {
   transition: transform 0.5s;
@@ -389,12 +384,7 @@ nav {
   flex: 1;
   padding: 1rem;
 }
-@media screen and (min-width: 769px) {
-  .technology-content {
-    padding: 1rem 2rem;
-  }
-}
-.technology-content h1 {
+.technology-content h2 {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
 }
@@ -408,6 +398,53 @@ nav {
 }
 .technology-content a:hover {
   color: rgb(249, 134, 27);
+}
+
+footer {
+  background-color: rgb(25, 21, 26);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+}
+footer a {
+  color: rgb(249, 134, 27);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.about {
+  display: grid;
+}
+@media screen and (min-width: 769px) {
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-content {
+  background-color: #091346;
+  padding: 2rem;
+}
+.about-content h1 {
+  color: white;
+}
+.about-content p {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+}
+
+.about-image {
+  max-height: 400px;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 /*# sourceMappingURL=style.css.map */

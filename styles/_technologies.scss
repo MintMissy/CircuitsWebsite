@@ -1,8 +1,20 @@
 .technologies {
+  margin-top: 2rem;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.technologies-container {
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (min-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .technology {
@@ -11,17 +23,6 @@
   border: 1px solid rgb(199, 199, 199);
   border-radius: 8px;
   overflow: hidden;
-
-  @media screen and (min-width: 769px) {
-    align-items: stretch;
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .technology:nth-child(2n) {
-    flex-direction: row-reverse;
-  }
 }
 
 .technology:hover .technology-image img {
@@ -32,12 +33,6 @@
   position: relative;
   overflow: hidden;
   height: 225px;
-
-  @media screen and (min-width: 769px) {
-    flex: 1;
-    max-height: unset;
-    height: unset;
-  }
 
   img {
     transition: transform 0.5s;
@@ -55,11 +50,7 @@
   flex: 1;
   padding: 1rem;
 
-  @media screen and (min-width: 769px) {
-    padding: 1rem 2rem;
-  }
-
-  h1 {
+  h2 {
     font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }
