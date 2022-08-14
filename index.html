@@ -23,10 +23,9 @@
             <span>Circuits</span>
         </div>
         <ul class="nav-links hidden" id="nav-links">
-            <li class="nav-link"><a href="#">Home</a></li>
-            <li class="nav-link"><a href="#">About</a></li>
-            <li class="nav-link"><a href="#">Technologies</a></li>
-            <li class="nav-link"><a href="#">Contact</a></li>
+            <li class="nav-link"><a href="#about">About</a></li>
+            <li class="nav-link"><a href="#technologies">Technologies</a></li>
+            <li class="nav-link"><a href="#contact">Contact</a></li>
         </ul>
         <button id="btn--hamburger" class="btn--hamburger material-icons">
             menu
@@ -43,7 +42,7 @@
                 <button class="btn">View Products</button>
             </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
             <div class="about-image">
                 <img src="./assets/bg-5.avif" alt="">
             </div>
@@ -56,7 +55,7 @@
                 </p>
             </div>
         </div>
-        <div class="technologies container">
+        <div class="technologies container" id="technologies">
             <h1>Modern Designs and Concepts</h1>
             <div class="technologies-container">
                 <article class="technology">
@@ -131,9 +130,28 @@
                 </div>
             </div>
         </div>
-        <div class="partners"></div>
-        <div class="reviews"></div>
-        <div class="contact"></div>
+        <div class="contact container" id="contact">
+            <h1>Contact with Us</h1>
+            <form action="">
+                <div class="input-group input-group--name">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName">
+                </div>
+                <div class="input-group input-group--name">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Made by <a href="https://github.com/MintMissy">MintMissy</a> with ❤️ and ☕</p>

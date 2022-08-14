@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 p {
@@ -54,5 +54,6 @@ p {
 @import "_home-hero.scss";
 @import "_customer-policy.scss";
 @import "_technologies.scss";
-@import "_footer.scss";
 @import "_about.scss";
+@import "_contact.scss";
+@import "_footer.scss";
