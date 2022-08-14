@@ -79,40 +79,57 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+:root {
+  --color-primary: rgb(107, 28, 246);
+  --color-secondary: rgb(249, 134, 27);
+  --color-primary-dark: rgb(9,19,70);
+  --color-footer-background: rgb(25, 21, 26);
+  --color-sidebar-background: rgb(55, 29, 117);
+  --color-border-gray: rgb(199, 199, 199);
+}
+
+:focus-visible {
+  outline: 2px solid black !important;
+}
+
 .btn {
-  border: 2px solid rgb(249, 134, 27);
+  border: 2px solid var(--color-secondary);
   padding: 0.5em 1em;
-  background: rgb(249, 134, 27);
+  background: var(--color-secondary);
   transition: background-color 0.15s, border-color 0.15s;
   color: white;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: rgb(86, 27, 222);
-  border-color: rgb(86, 27, 222);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .container {
   max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 h1 {
+  font-size: 1.75rem;
   padding-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 p {
   font-size: 1.1rem;
 }
 
-.lined-header {
+.header-decoration {
   margin-left: 1.5rem;
   position: relative;
 }
 
-.lined-header::before {
+.header-decoration::before {
   content: "";
   position: absolute;
   left: -1.5rem;
@@ -120,7 +137,7 @@ p {
   border-radius: 3px;
   top: 4px;
   bottom: 4px;
-  background-color: rgb(86, 27, 222);
+  background-color: var(--color-primary);
 }
 
 nav {
@@ -130,24 +147,23 @@ nav {
   right: 0;
   left: 0;
   padding: 0.75rem 1.5rem;
-  background-color: rgb(86, 27, 222);
-  display: flex;
+  background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
 
-.logo {
+.nav-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.logo img {
+.nav-logo img {
   width: 32px;
   height: 32px;
 }
-.logo span {
+.nav-logo span {
   font-weight: 900;
   color: white;
   font-size: 1.25rem;
@@ -194,25 +210,22 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: rgb(55, 29, 117);
+  background-color: var(--color-sidebar-background);
   gap: 2rem;
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-right: 2rem;
+  padding: 1rem 2rem 0;
   z-index: 100;
   margin: 0;
   transition: transform 0.2s ease-in-out;
-  z-index: 100;
 }
 @media screen and (min-width: 769px) {
   .nav-links {
     min-width: unset;
     position: initial;
     flex-direction: row;
-    padding-right: 0;
-    padding-top: unset;
+    padding: unset;
     background-color: unset;
   }
 }
@@ -249,14 +262,19 @@ nav {
   width: 90%;
 }
 
-.home-hero {
-  min-height: 60vh;
+.home {
   position: relative;
   overflow: hidden;
 }
-.home-hero .background {
+@media (min-width: 768px) {
+  .home {
+    min-height: 85vh;
+  }
+}
+
+.home-background {
   position: absolute;
-  background-image: url("../assets/bg-1.avif");
+  background-image: url("../assets/home-hero.avif");
   background-position: center;
   background-size: cover;
   top: 0;
@@ -267,49 +285,74 @@ nav {
   background-color: #091346;
   z-index: -1;
 }
-.home-hero .content {
+
+.home:hover .home-background {
+  transform: scale(1.1);
+}
+
+.home-content {
   text-align: center;
   height: 100%;
-  padding: 4rem 1rem 3rem;
+  padding: 4rem 1rem;
 }
 @media screen and (min-width: 769px) {
-  .home-hero .content {
+  .home-content {
     padding: 7rem 3rem 4rem;
   }
 }
-.home-hero .content h1 {
+.home-content h1 {
   color: white;
   font-weight: 900;
   font-size: 2.5rem;
 }
-.home-hero .content p {
+.home-content p {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
   max-width: 75ch;
 }
+.home-content a {
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+}
 
-.home-hero:hover .background {
-  transform: scale(1.1);
+.iot {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1rem;
+  text-align: center;
+  gap: 3rem;
+  align-items: center;
+}
+@media screen and (min-width: 769px) {
+  .iot {
+    flex-direction: row-reverse;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+}
+
+.iot-content {
+  flex: 3;
+}
+
+.iot-image {
+  flex: 2;
+}
+.iot-image img {
+  max-height: 250px;
 }
 
 .customer-policy {
   padding: 3rem 1rem 0;
-}
-.customer-policy h1 {
   text-align: center;
-}
-.customer-policy p {
-  text-align: center;
-  padding-bottom: 3rem;
 }
 
 .advantages {
+  padding: 3rem 0;
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
-  padding-bottom: 3rem;
 }
 @media screen and (min-width: 400px) {
   .advantages {
@@ -330,7 +373,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(86, 27, 222);
+  background-color: var(--color-primary);
   border-radius: 100%;
   width: 80px;
   height: 80px;
@@ -339,46 +382,46 @@ nav {
   margin: 0 auto 1rem;
 }
 .advantage h2 {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.15rem;
 }
 
-.technologies {
-  padding: 3rem 1rem 1rem;
+.products {
+  padding: 1rem;
 }
-.technologies h1 {
+.products h1 {
   text-align: center;
   padding-bottom: 1.5rem;
 }
 
-.technologies-container {
+.products-container {
   display: grid;
   gap: 2rem;
 }
 @media screen and (min-width: 769px) {
-  .technologies-container {
+  .products-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.technology {
+.product {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(199, 199, 199);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.technology:hover .technology-image img {
+.product:hover .product-image img {
   transform: scale(1.05);
 }
 
-.technology-image {
+.product-image {
   position: relative;
   overflow: hidden;
   height: 225px;
 }
-.technology-image img {
+.product-image img {
   transition: transform 0.5s;
   position: absolute;
   top: 0;
@@ -388,47 +431,36 @@ nav {
   object-fit: cover;
 }
 
-.technology-content {
+.product-content {
   background-color: rgb(249, 252, 255);
   flex: 1;
   padding: 1rem;
 }
-.technology-content h2 {
+.product-content h2 {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
 }
-.technology-content a {
+.product-content a {
   display: block;
-  color: rgb(86, 27, 222);
+  color: var(--color-primary);
   text-decoration: none;
   cursor: pointer;
   margin-top: 0.5rem;
   font-size: 1.2rem;
 }
-.technology-content a:hover {
-  color: rgb(249, 134, 27);
+.product-content a:hover {
+  color: var(--color-secondary);
 }
 
 .about {
   display: grid;
+  text-align: center;
 }
 @media screen and (min-width: 769px) {
   .about {
     grid-template-columns: repeat(2, 1fr);
+    text-align: left;
   }
-}
-
-.about-content {
-  background-color: #091346;
-  padding: 2rem;
-}
-.about-content h1 {
-  color: white;
-}
-.about-content p {
-  padding-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
 }
 
 .about-image {
@@ -441,50 +473,66 @@ nav {
   object-position: top;
 }
 
+.about-content {
+  background-color: var(--color-primary-dark);
+  padding: 2rem;
+}
+.about-content h1 {
+  color: white;
+}
+.about-content p {
+  padding-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+@media screen and (min-width: 769px) {
+  .about-content p {
+    max-width: 600px;
+  }
+}
+
 .contact {
-  padding: 1rem 1rem 7rem;
+  padding: 3rem 1rem 5rem;
 }
 .contact h1 {
   text-align: center;
 }
-.contact form {
-  max-width: 900px;
-  margin: 0 auto;
+.contact .form {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 2rem;
-  border: 1px solid rgb(199, 199, 199);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
 }
-.contact form input,
-.contact form textarea {
-  border: 1px solid rgb(199, 199, 199);
-  border-radius: 0px;
+.contact .form input,
+.contact .form textarea {
+  border: 1px solid var(--color-border-gray);
+  border-radius: 0;
   padding: 0.5em;
 }
-.contact form textarea {
+.contact .form textarea {
   resize: vertical;
 }
-.contact .input-group {
+
+.input-group {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 @media screen and (min-width: 769px) {
-  .contact .input-group--name {
+  .input-group--name {
     flex: 1;
   }
 }
-
 footer {
-  background-color: rgb(25, 21, 26);
+  background-color: var(--color-footer-background);
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 2rem 2rem;
+  padding: 2rem;
 }
 footer a {
-  color: rgb(249, 134, 27);
+  color: var(--color-secondary);
   text-decoration: none;
 }
 footer a:hover {

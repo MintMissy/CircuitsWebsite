@@ -1,23 +1,22 @@
 .contact {
-  padding: 1rem 1rem 7rem;
+  padding: 3rem 1rem 5rem;
+
   h1 {
     text-align: center;
   }
 
-  form {
-    max-width: 900px;
-    margin: 0 auto;
+  .form {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 2rem;
-    border: 1px solid rgb(199, 199, 199);
+    border: 1px solid var(--color-border-gray);
     border-radius: 8px;
 
     input,
     textarea {
-      border: 1px solid rgb(199, 199, 199);
-      border-radius: 0px;
+      border: 1px solid var(--color-border-gray);
+      border-radius: 0;
       padding: 0.5em;
     }
 
@@ -25,16 +24,16 @@
       resize: vertical;
     }
   }
+}
 
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  @media screen and (min-width: 769px) {
-    .input-group--name {
-      flex: 1;
-    }
+@media screen and (min-width: 769px) {
+  .input-group--name {
+    flex: 1;
   }
 }

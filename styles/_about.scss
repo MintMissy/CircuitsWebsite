@@ -1,23 +1,10 @@
 .about {
   display: grid;
+  text-align: center;
 
   @media screen and (min-width: 769px) {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.about-content {
-  background-color: #091346;
-  padding: 2rem;
-
-  h1 {
-    color: white;
-  }
-
-  p {
-    padding-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
+    text-align: left;
   }
 }
 
@@ -29,5 +16,23 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+  }
+}
+
+.about-content {
+  background-color: var(--color-primary-dark);
+  padding: 2rem;
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    padding-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+
+    @media screen and (min-width: 769px) {
+      max-width: 600px;
+    }
   }
 }

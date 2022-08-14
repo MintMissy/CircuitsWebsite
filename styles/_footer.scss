@@ -1,11 +1,11 @@
 footer {
-  background-color: rgb(25, 21, 26);
+  background-color: var(--color-footer-background);
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 2rem 2rem;
+  padding: 2rem;
 
   a {
-    color: rgb(249, 134, 27);
+    color: var(--color-secondary);
     text-decoration: none;
   }
 

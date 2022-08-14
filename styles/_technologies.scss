@@ -1,5 +1,5 @@
-.technologies {
-  padding: 3rem 1rem 1rem;
+.products {
+  padding: 1rem;
 
   h1 {
     text-align: center;
@@ -7,7 +7,7 @@
   }
 }
 
-.technologies-container {
+.products-container {
   display: grid;
   gap: 2rem;
 
@@ -16,19 +16,19 @@
   }
 }
 
-.technology {
+.product {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(199, 199, 199);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.technology:hover .technology-image img {
+.product:hover .product-image img {
   transform: scale(1.05);
 }
 
-.technology-image {
+.product-image {
   position: relative;
   overflow: hidden;
   height: 225px;
@@ -44,7 +44,7 @@
   }
 }
 
-.technology-content {
+.product-content {
   background-color: rgb(249, 252, 255);
   flex: 1;
   padding: 1rem;
@@ -56,7 +56,7 @@
 
   a {
     display: block;
-    color: rgb(86, 27, 222);
+    color: var(--color-primary);
     text-decoration: none;
     cursor: pointer;
     margin-top: 0.5rem;
@@ -64,6 +64,6 @@
   }
 
   a:hover {
-    color: rgb(249, 134, 27);
+    color: var(--color-secondary);
   }
 }

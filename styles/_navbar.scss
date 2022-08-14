@@ -5,18 +5,18 @@ nav {
   right: 0;
   left: 0;
   padding: 0.75rem 1.5rem;
-  background-color: rgb(86, 27, 222);
-  display: flex;
+  background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
 
-.logo {
+.nav-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
   img {
     width: 32px;
     height: 32px;
@@ -68,24 +68,21 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: rgb(55, 29, 117);
+  background-color: var(--color-sidebar-background);
   gap: 2rem;
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-right: 2rem;
+  padding: 1rem 2rem 0;
   z-index: 100;
   margin: 0;
   transition: transform 0.2s ease-in-out;
-  z-index: 100;
 
   @media screen and (min-width: 769px) {
     min-width: unset;
     position: initial;
     flex-direction: row;
-    padding-right: 0;
-    padding-top: unset;
+    padding: unset;
     background-color: unset;
   }
 }
